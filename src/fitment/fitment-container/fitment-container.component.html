@@ -1,0 +1,35 @@
+<button (click)="getYears()"> Select Year </button>
+
+
+
+<ul class="fitment" *ngIf=selectedYear>
+  <li *ngFor="let year of years$" [class.selected]="year === selectedYear" (click)="onSelectYear(year)">
+    <span class="badge">{{year}}</span>
+  </li>
+</ul>
+
+
+
+<ul class="fitment" *ngIf=selectedMaker>
+
+  <li *ngFor="let make of makers$" [class.selected]="make === selectedMaker" (click)="onSelectMaker(make)">
+    <span class="badge">{{make}}</span>
+  </li>
+</ul>
+
+
+<ul class="fitment" *ngIf="selectedModel">
+  <li *ngFor="let model of models$" [class.selected]="model === selectedModel" (click)="onSelectModel(model)">
+    <span class="badge">{{model}}</span>
+  </li>
+</ul>
+
+
+
+
+
+<ul class="fitment" *ngIf="selectedTrim">
+  <li *ngFor="let trim of trims$" [class.selected]="trim === selectedTrim" (click)="onSelectTrim(trim)">
+    <span class="badge">{{trim[0]}} {{trim[1]}}</span>
+  </li>
+</ul>
